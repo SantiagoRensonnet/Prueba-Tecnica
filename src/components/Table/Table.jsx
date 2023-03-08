@@ -6,7 +6,7 @@ const Table = ({ searchTerm, filterOption, token }) => {
 
   useEffect(() => {
     const movie = "Harry Potter";
-    const rootUrl = `http://www.omdbapi.com/?type=movie&s=${movie}&apikey=${token}`;
+    const rootUrl = `https://www.omdbapi.com/?type=movie&s=${movie}&apikey=${token}`;
 
     async function getData() {
       const response = await fetch(rootUrl);
@@ -51,7 +51,7 @@ const Table = ({ searchTerm, filterOption, token }) => {
                   <td>{movie.Year}</td>
                   <td>
                     <img
-                      src={`http://img.omdbapi.com/?apikey=${token}&i=${movie.imdbID}`}
+                      src={`https://img.omdbapi.com/?apikey=${token}&i=${movie.imdbID}`}
                       alt="movie-poster"
                       className="movie-image"
                     />
