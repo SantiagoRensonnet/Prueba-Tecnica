@@ -38,6 +38,20 @@
   padding: 12px 15px;
   border: 1px solid black;
 }
+.table-footer {
+  cursor: pointer;
+}
+.table-footer--conten {
+  transition: border-color 0.25s;
+}
+.table-footer--content:hover {
+  border-color: #646cff;
+}
+
+.table-footer--conten:focus,
+.table-footer--conten:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 .movie-table .movie-image {
   height: 115px;
   aspect-ratio: 2/3;

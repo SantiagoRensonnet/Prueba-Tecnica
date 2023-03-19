@@ -75,8 +75,9 @@ button:focus-visible {
   }
 }
 @media (min-width: 768px) {
-  body {
+  .App {
     display: flex;
+    flex-direction: column;
     place-items: center;
     min-height: 100vh;
   }
