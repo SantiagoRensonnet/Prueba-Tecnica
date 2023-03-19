@@ -35,7 +35,7 @@
 
 .movie-table th,
 .movie-table td {
-  padding: 12px 15px;
+  padding: 8px 10px;
   border: 1px solid black;
 }
 .table-footer {
@@ -64,6 +64,10 @@
   .movie-table {
     margin: 25px 0;
     width: 100%;
+  }
+  .movie-table th,
+  .movie-table td {
+    padding: 12px 15px;
   }
   .movie-table .movie-image {
     height: 155px;
