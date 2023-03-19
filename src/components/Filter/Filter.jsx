@@ -6,7 +6,9 @@ const Filter = ({ searchTerm, setSearchTerm, setFilterOption }) => {
         type="text"
         name="search-bar"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
       />
       <select
         name="filter-option"
