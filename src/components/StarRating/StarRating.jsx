@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 //Components
-import Star from "../Star/Star";
+import Star from "./Star/Star";
 //Styles
 import "./StarRating.css";
 
