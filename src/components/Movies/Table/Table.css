@@ -1,24 +1,24 @@
-.movie-table--outer-container {
-  margin: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+.movie-table--section {
+  margin-top: 0.9rem;
+  width: 100%;
   overflow-x: scroll;
   overflow-y: scroll;
+  font-family: "Roboto", sans-serif;
 }
 .movie-table--inner-container {
-  max-height: 66.4vh;
-  margin-top: 22px;
-  margin: 15px;
+  max-height: 73.2vh;
+  margin-top: 2rem;
+  margin: 1rem;
   padding-bottom: 20px;
 }
 .movie-table {
   border-spacing: 0px;
   font-size: 0.9em;
-  font-family: "Roboto", sans-serif;
-  min-width: 400px;
+
+  width: 100%;
 
   margin: 25px 0;
-  border-radius: 5px 5px 0 0;
+  /* border-radius: 5px 5px 0 0; */
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   color: black;
@@ -42,18 +42,21 @@
 .table-footer {
   cursor: pointer;
 }
-.table-footer--conten {
+.table-footer--content {
   transition: border-color 0.25s;
+}
+.table-footer--content > .table-footer--icon {
+  transition: color 0.25s;
 }
 .table-footer--content:hover {
   border-color: #646cff;
 }
 
-.table-footer--conten:focus,
-.table-footer--conten:focus-visible {
+.table-footer--content:focus,
+.table-footer--content:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-.movie-table .movie-image {
+.movie-table .movie-table--image {
   height: 155px;
   aspect-ratio: 2/3;
 }

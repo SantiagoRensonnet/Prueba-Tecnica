@@ -4,7 +4,7 @@ import { useResize } from "../../hooks/useResize";
 //Components
 import Table from "./Table/Table";
 import List from "./List/List";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
 
 const Movies = ({ searchTerm, filterOption, token }) => {
   const isMobile = useResize();
@@ -60,6 +60,12 @@ const Movies = ({ searchTerm, filterOption, token }) => {
   const fetchNextPage = () => {
     setPageNumber((prevState) => Math.min(prevState + 1, numberOfPages));
   };
+  const updateRatings = (id, newRating) => {
+    const newMoviesArray = moviesArray.map((movie) =>
+      movie.imdbID === id ? { ...movie, Rating: newRating } : movie
+    );
+    setMoviesArray(newMoviesArray);
+  };
   let moviesUI;
   if (moviesArray) {
     moviesUI = (
@@ -68,11 +74,14 @@ const Movies = ({ searchTerm, filterOption, token }) => {
           <List
             moviesArray={filterMovies(moviesArray)}
             fetchNextPage={fetchNextPage}
+            updateRatings={updateRatings}
+            showFooter={pageNumber < numberOfPages}
           />
         ) : (
           <Table
             moviesArray={filterMovies(moviesArray)}
             fetchNextPage={fetchNextPage}
+            updateRatings={updateRatings}
             showFooter={pageNumber < numberOfPages}
           />
         )}

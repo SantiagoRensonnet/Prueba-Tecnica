@@ -3,11 +3,11 @@ import "./Table.css";
 import StarRating from "../../StarRating/StarRating";
 import { useState } from "react";
 
-const Table = ({ moviesArray, fetchNextPage, showFooter }) => {
+const Table = ({ moviesArray, fetchNextPage, showFooter, updateRatings }) => {
   const [moreIconHover, setMoreIconHover] = useState(false);
   return (
     moviesArray && (
-      <section className="movie-table--outer-container">
+      <section className="movie-table--section">
         <article className="movie-table--inner-container">
           <table className="movie-table">
             <thead>
@@ -29,7 +29,7 @@ const Table = ({ moviesArray, fetchNextPage, showFooter }) => {
                     <img
                       src={movie.imgURL}
                       alt="movie-poster"
-                      className="movie-image"
+                      className="movie-table--image"
                     />
                   </td>
                   <td>
@@ -37,6 +37,7 @@ const Table = ({ moviesArray, fetchNextPage, showFooter }) => {
                       key={movie.imdbID}
                       id={movie.imdbID}
                       rating={movie.Rating}
+                      updateRatings={updateRatings}
                     />
                   </td>
                 </tr>
@@ -54,6 +55,7 @@ const Table = ({ moviesArray, fetchNextPage, showFooter }) => {
                     <FiMoreHorizontal
                       size={24}
                       color={moreIconHover ? "#646cff" : "black"}
+                      className="table-footer--icon"
                     />
                   </td>
                 </tr>
