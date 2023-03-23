@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import { useResize } from "../../hooks/useResize";
 //Components
-import Star from "../Star/Star";
+import Star from "./Star/Star";
 //Styles
 import "./StarRating.css";
 
-const StarRating = ({ id, rating }) => {
+const StarRating = ({ id, rating, updateRatings }) => {
   const [starArray, setStarAray] = useState([]);
   const [starArrayBeforeHover, setStarArrayBeforeHover] = useState([]);
+
   const [hovering, setHovering] = useState(false);
 
   const mapRatingToStars = (rating) => {
@@ -36,6 +38,7 @@ const StarRating = ({ id, rating }) => {
     setStarAray(newStarArray);
     setStarArrayBeforeHover(newStarArray);
   }, []);
+
   const handleHovering = (id, value) => {
     if (!hovering) {
       setStarArrayBeforeHover(starArray);
@@ -68,10 +71,9 @@ const StarRating = ({ id, rating }) => {
   };
   const setRating = (starId) => {
     const newStarArray = mapRatingToStars(starId);
-    setStarAray(newStarArray);
     setStarArrayBeforeHover(newStarArray);
     setHovering(false);
-    //the next step is to save it to local storage
+    updateRatings(id, starId);
     localStorage.setItem(id, starId);
   };
   return (

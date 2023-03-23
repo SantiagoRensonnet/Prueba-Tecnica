@@ -13,19 +13,25 @@ const Star = ({ id, value, handleHovering, setRating }) => {
     setRetrigger(true);
   };
   const handleMouseClick = () => {
-    setRating(id);
+    if (value === "full") {
+      setRating(id);
+    } else if (value === "empty") {
+      setRating(id - 1);
+    }
   };
 
   let starIcon;
   switch (value) {
     case "full":
-      starIcon = <AiFillStar size={21} />;
+      starIcon = <AiFillStar size={21} cursor={"pointer"} />;
       break;
     case "empty":
-      starIcon = <AiOutlineStar size={21} />;
+      starIcon = <AiOutlineStar size={21} cursor={"pointer"} />;
       break;
     case "gray":
-      starIcon = <AiFillStar size={21} color="hsl(0,0%,87%)" />;
+      starIcon = (
+        <AiFillStar size={21} color="hsl(0,0%,87%)" cursor={"pointer"} />
+      );
       break;
 
     default:

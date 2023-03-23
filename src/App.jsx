@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Filter from "./components/Filter/Filter";
-import Table from "./components/Table/Table";
+import Movies from "./components/Movies/Movies";
 import "./App.css";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +18,7 @@ function App() {
         setSearchTerm={setSearchTerm}
         setFilterOption={setFilterOption}
       />
-      <Table
+      <Movies
         filterOption={filterOption}
         searchTerm={searchTerm}
         token={token}
